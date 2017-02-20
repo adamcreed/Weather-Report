@@ -1,5 +1,6 @@
-class MemoryCache
+class Cache
   attr_reader :cache
+  
   def initialize
     @cache = {}
   end

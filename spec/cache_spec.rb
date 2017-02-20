@@ -1,8 +1,8 @@
-require 'memory_cache'
+require 'cache'
 
-describe MemoryCache do
+describe Cache do
   before do
-    @cash = MemoryCache.new
+    @cash = Cache.new
   end
 
   describe '#set' do
