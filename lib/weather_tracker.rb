@@ -22,7 +22,7 @@ class WeatherTracker
   end
 
   def load_weather_info
-    cache = FileCache.new 'cache.txt'
+    cache = FileCache.new '.cache'
 
     # TODO: check cache age
     if cache.key? @zip_code
@@ -62,5 +62,9 @@ class WeatherTracker
     @forecast[:hurricanes] = @page['currenthurricane'].map do |hurricane|
       { storm_info: hurricane['stormInfo'] }
     end
+  end
+
+  def to_s
+    @forecast.map { |f| f.to_s }
   end
 end
